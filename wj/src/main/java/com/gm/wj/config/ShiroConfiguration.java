@@ -39,7 +39,7 @@ public class ShiroConfiguration {
         Map<String, Filter> customizedFilter = new HashMap<>();  // 自定义过滤器设置 1
 
         customizedFilter.put("url", getURLPathMatchingFilter()); // 自定义过滤器设置 2，命名，需在设置过滤路径前
-
+        filterChainDefinitionMap.put("/api/login", "anon"); // 允许匿名访问
         filterChainDefinitionMap.put("/api/authentication", "authc"); // 防鸡贼登录
         filterChainDefinitionMap.put("/api/menu", "authc");
         filterChainDefinitionMap.put("/api/admin/**", "authc");
